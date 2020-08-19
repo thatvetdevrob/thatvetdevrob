@@ -1,2 +1,0 @@
-# thatvetdevrob
-My portfolio repo

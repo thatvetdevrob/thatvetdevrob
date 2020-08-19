@@ -1,0 +1,210 @@
+/* CSS */
+
+/* 
+$black-coral: rgba(92, 93, 103, 1);
+$banana-mania: rgba(247, 227, 175, 1);
+$new-york-pink: rgba(231, 143, 142, 1);
+$cadet-blue: rgba(124, 180, 184, 1);
+$cherry-blossom-pink: rgba(255, 183, 195, 1);
+For body pattern i used http://www.patternify.com/ and created the boned on a 10 by 10 grid.
+Based on Marina Ferreira's game tutorial: https://marina-ferreira.github.io/projects/js/memory-game/
+Buttons from: https://fdossena.com/?p=html5cool/buttons/i.frag
+Stars by Nicolas Gallagher 
+Thanks guys, were it not for everyone i would have a very sucky game * WAGS <3 *
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.memory-game {
+  width: 100%;
+  height: 840px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(23% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  border-radius: 25px;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+  
+}
+
+.memory-card.poof > * {
+  background: transparent;
+}
+
+.evil{
+  animation: shake 18s 7s infinite forwards;
+}
+
+@keyframes shake {
+  0%   {transform: rotate(0deg)}
+  5%  {transform: rotate(1deg)}
+  10%  {transform: rotate(-2deg)}
+  15%  {transform: rotate(1deg)}
+  20% {transform: rotate(0deg)}
+  22%  {transform: rotate(0deg)}
+  100% {transform: rotate(0deg)}
+}
+
+.evil2{
+  animation: shake2 32s 29s infinite forwards;
+}
+
+@keyframes shake2 {
+  0%   {transform: rotate(0deg)}
+  5%  {transform: rotate(1deg)}
+  10%  {transform: rotate(-2deg)}
+  15%  {transform: rotate(1deg)}
+  20% {transform: rotate(0deg)}
+  22%  {transform: rotate(0deg)}
+  100% {transform: rotate(0deg)}
+}
+
+.carddescription{
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+    color: #232927;
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  position: absolute;
+  border-radius: 25px;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23010102' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.front-face {
+  border-radius: 25px;
+  transform: rotateY(180deg);
+  height: 100%;
+}
+
+
+
+
+a.button2{
+display:inline-block;
+padding:0.5em 3em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:'Roboto',sans-serif;
+  font-weight:400;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.15s;
+  }
+
+  a.button2:hover{
+  color:#DDDDDD;
+  border-color:#DDDDDD;
+  background-color: red;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  }
+  a.button2:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+  }
+
+  @media all and (max-width:30em){
+   a.button2{
+  display:block;
+  margin:0.4em auto;};
+  }
+
+
+@keyframes bouncy {
+  0%{top:0em}
+  40%{top:0em}
+ 43%{top:-0.9em}
+ 46%{top:0em}
+ 48%{top:-0.4em}
+ 50%{top:0em}
+ 100%{top:0em;}  
+} 
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+#won{
+
+  position: relative;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  display: none;
+}
+
+
+.won{
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  background-color: black;
+}
+
+#congratsHolder{
+  line-height: 3em;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#goodEnd1{
+
+}
+
+#goodEnd2{}
+
+#goodEnd3{}
+
+#goodEnd4{}
+
+#goodEnd5{}
+
+#goodEnd6{}

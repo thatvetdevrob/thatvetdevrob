@@ -1,115 +1,464 @@
-<!DOCTYPE html>
-<html class='stars' lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Front End Dev</title>
-</head>
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="shortcut icon" href="images/plane.ico" type="image/x-icon"/>
+		<title>ThatVetDevRob</title>
+		<script src="https://kit.fontawesome.com/673678219e.js" crossorigin="anonymous"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/game.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  
+		<style>
 
-<body>
-
-
-  <div class="card" id='intro'>
-
-<h1>Welcome</h1>
-<p>Sorry, but im crafting a whole new portfolio,<br>
-   so please come back soon!
-  <br><br>
-
-<span style='color: transparent;'>~~~~~~~~~~~~~</span>~Rob<br>   <br> 6/21/2020</p>
-<div id='insideIntro'>
-
-  <p>Here are some of my Code Fellow Projects:</p>
-
-  <ul>
-
-    <li>CF Pats Salmon Cookie: <a href="/psc/index.html">here</a></li>
-    <li>CF Chocolate pizza: <a href="/cp/index.html">here</a></li>
-    <li>CF Buss Mall: <a href="/mb/index.html">here</a></li>
-  </ul>
-  <br>
-  <br>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\Resume.pdf" download="resume">Resume</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\Bachelor Diploma.pdf" download="Diploma">Diploma</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\CSSCert.pdf" download="CSS">CSS Cert</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\W3SchoolsHTML.pdf" download="HTML">HTML Cert</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\W3Schools JS Cert.pdf" download="JS">JS Cert</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\Resume.pdf" download="SkillSpire">SkillSpire Cert</a></button>
-  <button class="btnResume"><i class="fa fa-download"></i> <a href="docs\Air Warfare Cert.pdf" download="resume">AWS CERT</a></button>
-  <br><br>
-  <p>Planets colored and animated by me, <br>stars by <a href="https://codepen.io/WebSonick/pen/vjmgu">WebSonik</a></p>
-
-</div>
-
-  </div>
+/* Animation */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
+}
 
 
-  <div class="stars"></div>
-<div class="twinkling"></div>
+.hoja {
+  color: #dcdce2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -140px;
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 35px;
+  line-height: 280px;
+  -webkit-font-smoothing: antialiased;
+	display: none;
+}
+.hoja:after,
+.hoja:before {
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.hoja:after {
+  box-shadow: inset 0 17.5px 0 rgba(250, 250, 0, 0.6), inset 17.5px 0 0 rgba(250, 200, 0, 0.6), inset 0 -17.5px 0 rgba(250, 150, 0, 0.6), inset -17.5px 0 0 rgba(250, 100, 0, 0.6);
+  -webkit-animation: rotar 2s -0.5s linear infinite;
+          animation: rotar 2s -0.5s linear infinite;
+}
+.hoja:before {
+  box-shadow: inset 0 17.5px 0 rgba(0, 250, 250, 0.6), inset 17.5px 0 0 rgba(0, 200, 200, 0.6), inset 0 -17.5px 0 rgba(0, 150, 200, 0.6), inset -17.5px 0 0 rgba(0, 200, 250, 0.6);
+  -webkit-animation: rotarIz 2s -0.5s linear infinite;
+          animation: rotarIz 2s -0.5s linear infinite;
+}
+@-webkit-keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@keyframes rotar {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+@-webkit-keyframes rotarIz {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+@keyframes rotarIz {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+
+/* Form */
+
+.multi-button {
+  display: flex;
+  width: 100%;
+  box-shadow: var(--shadow) 4px 4px;
+}
+
+.multi-button button {
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding:
+    calc(var(--space) / 1.125)
+    var(--space)
+    var(--space);
+  border: var(--border-size) solid black;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  text-transform: lowercase;
+  text-shadow: var(--shadow) 2px 2px;
+  transition: flex-grow var(--duration) var(--ease);
+}
+
+.multi-button button + button {
+  border-left: var(--border-size) solid black;
+  margin-left: calc(var(--border-size) * -1);
+}
+
+.multi-button button:hover,
+.multi-button button:focus {
+  flex-grow: 2;
+  color: white;
+  outline: none;
+  text-shadow: none;
+  background-color: #3d484e;;
+}
+
+.multi-button button:focus {
+  outline: var(--border-size) dashed var(--color-primary);
+  outline-offset: calc(var(--border-size) * -3);
+}
+
+.multi-button:hover button:focus:not(:hover) {
+  flex-grow: 1;
+  color: var(--color-secondary);
+  background-color: #3d484e;;
+  outline-color: var(--color-tertiary);
+}
+
+.multi-button button:active {
+  transform: translateY(var(--border-size));
+}
+
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
 
 
-<div id='oortCloud'>
 
-  <div id='pluto'>
+				<!--Animation-->
+				<div id='hoja' class="hoja"><i class="fas fa-helicopter"></i></div>
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<i class="fas fa-fighter-jet fa-lg"></i>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Robert Rizo</h1>
+								<p>I am a veteran turned software developer who looks only at jobs focused on UI and front end applications of full stack applications. I’ve worked on CRM marketing emails for <span style='font-weight: bold;'>Microsoft</span> and on animations for Angular apps for <span style='font-weight: bold;'>Apple.</span></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro" onclick="myFunction()">About</a></li>
+								<li><a href="#work" onclick="myFunction()">Work</a></li>
+								<li><a href="#about" onclick="myFunction()">Docs</a></li>
+								<li><a href="#contact" onclick="myFunction()">Contact</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
 
-  <div id='neptune'>
+				<!-- Main -->
+					<div id="main">
 
-    <div id='uranus'>
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="Microsoft Bing Ads" /></span>
+								<p>I joined the service in 2003, and along the way I received several awards such as the Enlisted Surface Warfare Specialist certificate (ESWS), the Enlisted Aviation  Warfare Specialist certificate (EAWS), Volunteer service medal, and other awards besides while attending college courses and obtaining an arts associates by Excelsior college (2016).
+								<br><br>
 
-
-  <div id='saturn'>
-
-
-  <div id='jupiter'>
-  
-
-  <div id='mars'>
-
-<div id='earth'>
-
-  <div id='venus'>
-
-  <div id='mercury'>
-
-  <section class="sun">
-    <figure class="ball"><span class="shadow"></span></figure>
-  </section>
-  
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+								In 2018, after transitioning out of the military I achieved my Bachelors of Computer Science and obtained my first job as a Software developer creating Salesforce marketing emails. I was a contractor for TCS America, and after working there for a year I became the lead email CRM developer.<br><br>
 
 
+								While working at the Bravern building, where the Microsoft Bings marketing department lives, I got to construct responsive design emails using Salesforce Marketing Cloud (SFMC) for responsive and custom costumer relation experiences.
+								<br><br>
+
+								<span class="image main"><img src="images/microsoftEmails.jpg" alt="My Email Example" /></span>
+
+								My daily responsibilities included use browser specific logic to target different email services across multiple devices and platforms, utilized AMP script to specify time and variables for custom targeted marketing emails to suit individuals while utilizing a single template.
+								<br><br>
+								
+								This job helped me find out that I love manipulating assets, creating software solutions to display the content the design team provides and suing the Microsoft style guide to develop the content required as expected across as many devices as possible. 
+								<br><br>
+
+								Once the contract was over I decided to seek out a job that had front end technologies that I would like to further develop and took an opportunity with Infosys as a contractor working at Apple helping style landing pages for their products.
+								<br><br>
+
+								<span class="image main"><img src="images/apple.jpg" alt="My Email Example" /></span>
+
+								While still employed I do like to give back to the community and participate in social responsibility inspired community activities such as volunteering teaching kids to code and participating in interviews to <a href='https://425business.com/inclusive-coding/'>help veterans learn about ways to pursue a career in tech</a> just like me. I’m happy in what I do, and I look forward to work in more creative projects.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Portfolio</h2>
+								<h2>Bing Ads / Microsoft</h2> 
+								<h2>(2018 - 2019)</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="Microsoft emails" /></span>
+								<p>Working at Bing ads for Microsoft as a TCS America contractor meant working on multiple markets that each have individual clients to be reached via custom tailored marketing emails. The solution for Bing is using <strong>Salesforce Marketing Cloud (SFMC)</strong> content builder to create one email template and then use AMP script to ensure each market clients are plugged in to the body using logic.</p>
+
+								<span class="image main"><img src="images/sample-top-email.jpg" alt="My Email Example" /></span>
+								<p>On average, I would focus one multiple campaigns during a single sprint; the email marketing campaigns were divided in to several categories; one time like new features from Microsoft or an ongoing monthly webinar with new speakers are just a couple of examples. My job was to manipulate the HTML, CSS, and AMP script (instead of regular JS) to make the vision of the UI team a reality, and a responsive reality that qualified under the Microsoft style guides as on brand at the same time.</p>
+
+								<span class="image main"><img src="images/sample-middle-email.jpg" alt="My Email Example" /></span>
+								<p>The most important part of my job was to make sure the UI was correct even when the screens were of smaller devices or across email services: after a while I was asked to help other teams when they had problems displaying their assets because I have a good handle on basic CSS and like to take my time to figure out the most compatible solutions for as many users as possible.</p>
+								
+								<p><strong>Technologies:</strong> Salesforce (SFMC), content builder, Web-Smart (EPNY), CSS, AMP-script, Marketo, SQL, Journey-builder, Automation Studio, HTML (emails are table based and not HTML5).</p>
+
+								<h2>Apple</h2> 
+								<h2>(2019 - present)</h2>
+
+								<span class="image main"><img src="images/under.jpg" alt="My Email Example" /></span>
+								<p>My job at Apple as an Infosys contractor involves styling and asset manipulation but on web based applications. This section is under construction while my request to show my work is being approved by my supervisors: please stay tuned.</p>
+
+								<h2>Code Fellows</h2> 
+								<h2>(2020 - present)</h2>
+
+								<span class="image main"><img src="images/everyone.jpg" alt="My Email Example" /></span>
+								<p><a href='https://www.codefellows.org/'>Code Fellows</a> is a very intense, very in-depth set of courses that I am almost done with (just one more class to go!) that has elevated my styling and JavaScript full stack programing to the next level. Not only am I now able to style and work on web applications more effectively, I have been exposed to a time sensitive way of problem solving the building of web apps using stacked learning while also styling and creating interactive and pleasing content. Here is a card-match concentration game that uses Java script I built for one of our projects: </p>
+
+							<!-- Features game -->
+							
+
+										<section id="memory-game"  class="memory-game">
+					
+											<div class="memory-card" data-framework="LAP">
+												<img class="front-face" alt="laptop" src="images/laptop.jpg" />
+												<img class="back-face" />
+											
+											</div>
+											<div class="memory-card" data-framework="LAP">
+												<img class="front-face" alt="laptop" src="images/laptop.jpg" />
+												<img class="back-face" />
+											
+											</div>
+											
+											<div class="memory-card" data-framework="WORK">
+												<img class="front-face" alt="work" src="images/work.jpg" />
+												<img class="back-face" />
+											
+											</div>
+											<div class="memory-card" data-framework="WORK">
+												<img class="front-face" alt="work" src="images/work.jpg" />
+												<img class="back-face" />
+											
+											</div>
+											
+											<div class="memory-card" data-framework="DROID">
+												<img class="front-face" alt="droid" src="images/droid.jpg" />
+												<img class="back-face" />
+											
+											</div>
+											<div class="memory-card" data-framework="DROID">
+												<img class="front-face" alt="droid" src="images/droid.jpg" />
+												<img class="back-face" />
+											</div>
+										
+											<div class="memory-card" data-framework="VET">
+												<img class="front-face" alt="vet" src="images/veteran.jpg" />
+												<img class="back-face" />
+											</div>
+											<div class="memory-card" data-framework="VET">
+												<img class="front-face" alt="vet" src="images/veteran.jpg" />
+												<img class="back-face" />
+											</div>
+										
+											<div class="memory-card" data-framework="ARMY">
+												<img class="front-face" alt="army" src="images/army.jpg" />
+												<img class="back-face" />
+											</div>
+											<div class="memory-card" data-framework="ARMY">
+												<img class="front-face" alt="army" src="images/army.jpg" />
+												<img class="back-face" />
+											</div>
+										
+											<div class="memory-card" data-framework="MOTTO">
+												<img class="front-face" alt="motto" src="images/motto.jpg" />
+												<img class="back-face" />
+											</div>
+											<div class="memory-card" data-framework="MOTTO">
+												<img class="front-face" alt="motto" src="images/motto.jpg" />
+												<img class="back-face" />
+											</div>
+										
+											<div class="memory-card" data-framework="FLOW">
+												<img class="front-face" alt="flow" src="images/flow.jpg" />
+												<img class="back-face" />
+											</div>
+											<div class="memory-card" data-framework="FLOW">
+												<img class="front-face" alt="flow" src="images/flow.jpg" />
+												<img class="back-face" />
+											</div>
+										
+											<div class="memory-card" data-framework="PRO">
+												<img class="front-face" alt="product" src="images/product.jpg" />
+												<img class="back-face" />
+											</div>
+											<div class="memory-card" data-framework="PRO">
+												<img class="front-face" alt="product" src="images/product.jpg" />
+												<img class="back-face" />
+											</div>
+											
+											</section>
+
+								<p><strong>Frameworks:</strong> NodeJS, Angular 2, Mustache, EJS, Java (JEE).</p>
+								<p><strong>ENVIRONMENTS & TOOLS:</strong> EJS, Mustache, JS, SASS, CSS3, AJAX, asset migration and integration. Unix. Git. GitHub. Node.js. ESLint. MongoDB. Heroku. Continuous integration. ES6. React. Redux. Webpack. SCSS. JSDoc. Swagger. Jest. Redux. React-Native. Socket.IO. Express JS. Cloud integration and deployments with AWS tools like S3, Lambda</p>
+
+								<p>I will update this section upon completion of my Code Fellows training.</p>
+
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">Documents</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<h6>All certificates and awards here for you to browse</h6>
+								
+								
+								<div class="multi-button">
+									<button><a href="docs/Resume2.pdf" download>Resume</a></button>
+									<button><a href="docs/Bachelor Diploma.pdf" download>Bachelors</a></button>
+									<button><a href="docs/W3Schools JS Cert.pdf" download>JS Cert</a></button>
+								</div>
+
+								<div class="multi-button">
+									<button><a href="docs/CSSCert.pdf" download>CSS Cert</a></button>
+									<button><a href="docs/W3SchoolsHTML.pdf" download>HTML Cert</a></button>
+								</div><br>
+								<h6>Credits:</h6>
+								<p><strong>Thanks to:</strong> 
+									<ul>
+										<li>Plane icon from <a href='https://pngtree.com/so/grey-bomber'>pngtree.com</a></li>
+										<li><a href="https://www.heropatterns.com/">Hero patterns</a> for the back of the card game images</li>
+										<li><a href="https://twitter.com/marco_bf">Marco Barria</a> for the transition animation</li>
+										<li><a href="https://unsplash.com/">Unsplash</a> for memory game images</li>
+										<li><a href="aj@lkn.io">Aj</a> for the web template</li>
+
+								</ul>
+								</p>
 
 
-  
-  
+							</article>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <script src="js/app.js"></script> 
-</body>
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<h6>The best way to get a hold of me is via phone at <span itemprop="telephone">
+									<a href="tel:+14158197231">
+										 415-819-7231
+									</a>
+								</span></h6>
+								<form action='mailto:thatvetdevrob@gmail.com'>
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" required/>
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" required/>
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4" required></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
 
+							</article>
+
+						
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p>Veteran-Made</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+
+		
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/game.js"></script>
+
+			<script>
+				function myFunction() {
+					document.getElementById("hoja").style.display = "block";
+					setTimeout(function(){ 
+
+						document.getElementById("hoja").style.display = "none";
+
+					 }, 1000);
+				}
+				</script>
+
+
+	</body>
 </html>
