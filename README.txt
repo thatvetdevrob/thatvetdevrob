@@ -1,6 +1,8 @@
+## (Check out my site)[https://thatvetdevrob.com/)
+
 My portfolio has a lot of individual pieces coming togethere: all the emails from bings ads were done by me and used with permision of my supervisors both at TCS and Microsoft. 
 
-Credits:
+### Credits:
 
 	Page layout from:
 		aj@lkn.io | @ajlkn
