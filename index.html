@@ -1,464 +1,471 @@
 <!DOCTYPE HTML>
 <!--
-	Dimension by HTML5 UP
+	Paradigm Shift by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<link rel="shortcut icon" href="images/plane.ico" type="image/x-icon"/>
-		<title>ThatVetDevRob</title>
-		<script src="https://kit.fontawesome.com/673678219e.js" crossorigin="anonymous"></script>
+		<title>Paradigm Shift by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/game.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<style>
-
-/* Animation */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype');
-}
-
-
-.hoja {
-  color: #dcdce2;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -140px;
-  margin-top: -140px;
-  width: 280px;
-  height: 280px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 35px;
-  line-height: 280px;
-  -webkit-font-smoothing: antialiased;
-	display: none;
-}
-.hoja:after,
-.hoja:before {
-  content: "";
-  border-radius: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-}
-.hoja:after {
-  box-shadow: inset 0 17.5px 0 rgba(250, 250, 0, 0.6), inset 17.5px 0 0 rgba(250, 200, 0, 0.6), inset 0 -17.5px 0 rgba(250, 150, 0, 0.6), inset -17.5px 0 0 rgba(250, 100, 0, 0.6);
-  -webkit-animation: rotar 2s -0.5s linear infinite;
-          animation: rotar 2s -0.5s linear infinite;
-}
-.hoja:before {
-  box-shadow: inset 0 17.5px 0 rgba(0, 250, 250, 0.6), inset 17.5px 0 0 rgba(0, 200, 200, 0.6), inset 0 -17.5px 0 rgba(0, 150, 200, 0.6), inset -17.5px 0 0 rgba(0, 200, 250, 0.6);
-  -webkit-animation: rotarIz 2s -0.5s linear infinite;
-          animation: rotarIz 2s -0.5s linear infinite;
-}
-@-webkit-keyframes rotar {
-  0% {
-    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
-            transform: rotateZ(0deg) scaleX(1) scaleY(1);
-  }
-  50% {
-    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
-            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
-            transform: rotateZ(360deg) scaleX(1) scaleY(1);
-  }
-}
-@keyframes rotar {
-  0% {
-    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
-            transform: rotateZ(0deg) scaleX(1) scaleY(1);
-  }
-  50% {
-    -webkit-transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
-            transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
-            transform: rotateZ(360deg) scaleX(1) scaleY(1);
-  }
-}
-@-webkit-keyframes rotarIz {
-  0% {
-    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
-            transform: rotateZ(0deg) scaleX(1) scaleY(1);
-  }
-  50% {
-    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
-            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
-  }
-  100% {
-    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
-            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
-  }
-}
-@keyframes rotarIz {
-  0% {
-    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
-            transform: rotateZ(0deg) scaleX(1) scaleY(1);
-  }
-  50% {
-    -webkit-transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
-            transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);
-  }
-  100% {
-    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
-            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
-  }
-}
-
-/* Form */
-
-.multi-button {
-  display: flex;
-  width: 100%;
-  box-shadow: var(--shadow) 4px 4px;
-}
-
-.multi-button button {
-  flex-grow: 1;
-  cursor: pointer;
-  position: relative;
-  padding:
-    calc(var(--space) / 1.125)
-    var(--space)
-    var(--space);
-  border: var(--border-size) solid black;
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  font-size: 1.5rem;
-  font-family: var(--font-family);
-  text-transform: lowercase;
-  text-shadow: var(--shadow) 2px 2px;
-  transition: flex-grow var(--duration) var(--ease);
-}
-
-.multi-button button + button {
-  border-left: var(--border-size) solid black;
-  margin-left: calc(var(--border-size) * -1);
-}
-
-.multi-button button:hover,
-.multi-button button:focus {
-  flex-grow: 2;
-  color: white;
-  outline: none;
-  text-shadow: none;
-  background-color: #3d484e;;
-}
-
-.multi-button button:focus {
-  outline: var(--border-size) dashed var(--color-primary);
-  outline-offset: calc(var(--border-size) * -3);
-}
-
-.multi-button:hover button:focus:not(:hover) {
-  flex-grow: 1;
-  color: var(--color-secondary);
-  background-color: #3d484e;;
-  outline-color: var(--color-tertiary);
-}
-
-.multi-button button:active {
-  transform: translateY(var(--border-size));
-}
-
-		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-
-
-				<!--Animation-->
-				<div id='hoja' class="hoja"><i class="fas fa-helicopter"></i></div>
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<i class="fas fa-fighter-jet fa-lg"></i>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Robert Rizo</h1>
-								<p>I am a veteran turned software developer who looks only at jobs focused on UI and front end applications of full stack applications. I’ve worked on CRM marketing emails for <span style='font-weight: bold;'>Microsoft</span> and on animations for Angular apps for <span style='font-weight: bold;'>Apple.</span> Check out my <a href='https://github.com/thatvetdevrob'>github</a>.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro" onclick="myFunction()">About</a></li>
-								<li><a href="#work" onclick="myFunction()">Work</a></li>
-								<li><a href="#about" onclick="myFunction()">Docs</a></li>
-								<li><a href="#contact" onclick="myFunction()">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+				<!-- Intro -->
+					<section class="intro">
+						<header>
+							<h1>Paradigm Shift</h1>
+							<p>A free responsive site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
-						</nav>
-					</header>
+						</header>
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
+						</div>
+					</section>
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Section -->
+					<section id="first">
+						<header>
+							<h2>Magna sed nullam nisl adipiscing</h2>
+						</header>
+						<div class="content">
+							<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+						</div>
+					</section>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="Microsoft Bing Ads" /></span>
-								<p>I joined the service in 2003, and along the way I received several awards such as the Enlisted Surface Warfare Specialist certificate (ESWS), the Enlisted Aviation  Warfare Specialist certificate (EAWS), Volunteer service medal, and other awards besides while attending college courses and obtaining an arts associates by Excelsior college (2016).
-								<br><br>
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Feugiat consequat tempus ultrices</h2>
+						</header>
+						<div class="content">
+							<p><strong>Etiam tristique libero</strong> eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum.</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-laptop">Consequat tempus</li>
+								<li class="icon solid fa-bolt">Etiam adipiscing</li>
+								<li class="icon solid fa-signal">Libero nullam</li>
+								<li class="icon solid fa-cog">Blandit condimentum</li>
+								<li class="icon solid fa-map-marker-alt">Lorem ipsum dolor</li>
+								<li class="icon solid fa-code">Nibh amet venenatis</li>
+							</ul>
+							<p>Vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+						</div>
+					</section>
 
-								In 2018, after transitioning out of the military I achieved my Bachelors of Computer Science and obtained my first job as a Software developer creating Salesforce marketing emails. I was a contractor for TCS America, and after working there for a year I became the lead email CRM developer.<br><br>
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Ultrices erat magna sed condimentum</h2>
+						</header>
+						<div class="content">
+							<p><strong>Integer mollis egestas</strong> nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 
-
-								While working at the Bravern building, where the Microsoft Bings marketing department lives, I got to construct responsive design emails using Salesforce Marketing Cloud (SFMC) for responsive and custom costumer relation experiences.
-								<br><br>
-
-								<span class="image main"><img src="images/microsoftEmails.jpg" alt="My Email Example" /></span>
-
-								My daily responsibilities included use browser specific logic to target different email services across multiple devices and platforms, utilized AMP script to specify time and variables for custom targeted marketing emails to suit individuals while utilizing a single template.
-								<br><br>
-								
-								This job helped me find out that I love manipulating assets, creating software solutions to display the content the design team provides and suing the Microsoft style guide to develop the content required as expected across as many devices as possible. 
-								<br><br>
-
-								Once the contract was over I decided to seek out a job that had front end technologies that I would like to further develop and took an opportunity with Infosys as a contractor working at Apple helping style landing pages for their products.
-								<br><br>
-
-								<span class="image main"><img src="images/apple.jpg" alt="My Email Example" /></span>
-
-								While still employed I do like to give back to the community and participate in social responsibility inspired community activities such as volunteering teaching kids to code and participating in interviews to <a href='https://425business.com/inclusive-coding/'>help veterans learn about ways to pursue a career in tech</a> just like me. I’m happy in what I do, and I look forward to work in more creative projects.</p>
-							</article>
-
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Portfolio</h2>
-								<h2>Bing Ads / Microsoft</h2> 
-								<h2>(2018 - 2019)</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="Microsoft emails" /></span>
-								<p>Working at Bing ads for Microsoft as a TCS America contractor meant working on multiple markets that each have individual clients to be reached via custom tailored marketing emails. The solution for Bing is using <strong>Salesforce Marketing Cloud (SFMC)</strong> content builder to create one email template and then use AMP script to ensure each market clients are plugged in to the body using logic.</p>
-
-								<span class="image main"><img src="images/sample-top-email.jpg" alt="My Email Example" /></span>
-								<p>On average, I would focus one multiple campaigns during a single sprint; the email marketing campaigns were divided in to several categories; one time like new features from Microsoft or an ongoing monthly webinar with new speakers are just a couple of examples. My job was to manipulate the HTML, CSS, and AMP script (instead of regular JS) to make the vision of the UI team a reality, and a responsive reality that qualified under the Microsoft style guides as on brand at the same time.</p>
-
-								<span class="image main"><img src="images/sample-middle-email.jpg" alt="My Email Example" /></span>
-								<p>The most important part of my job was to make sure the UI was correct even when the screens were of smaller devices or across email services: after a while I was asked to help other teams when they had problems displaying their assets because I have a good handle on basic CSS and like to take my time to figure out the most compatible solutions for as many users as possible.</p>
-								
-								<p><strong>Technologies:</strong> Salesforce (SFMC), content builder, Web-Smart (EPNY), CSS, AMP-script, Marketo, SQL, Journey-builder, Automation Studio, HTML (emails are table based and not HTML5).</p>
-
-								<h2>Apple</h2> 
-								<h2>(2019 - present)</h2>
-
-								<span class="image main"><img src="images/under.jpg" alt="My Email Example" /></span>
-								<p>My job at Apple as an Infosys contractor involves styling and asset manipulation but on web based applications. This section is under construction while my request to show my work is being approved by my supervisors: please stay tuned.</p>
-
-								<h2>Code Fellows</h2> 
-								<h2>(2020 - present)</h2>
-
-								<span class="image main"><img src="images/everyone.jpg" alt="My Email Example" /></span>
-								<p><a href='https://www.codefellows.org/'>Code Fellows</a> is a very intense, very in-depth set of courses that I am almost done with (just one more class to go!) that has elevated my styling and JavaScript full stack programing to the next level. Not only am I now able to style and work on web applications more effectively, I have been exposed to a time sensitive way of problem solving the building of web apps using stacked learning while also styling and creating interactive and pleasing content. Here is a card-match concentration game that uses Java script I built for one of our projects: </p>
-
-							<!-- Features game -->
-							
-
-										<section id="memory-game"  class="memory-game">
-					
-											<div class="memory-card" data-framework="LAP">
-												<img class="front-face" alt="laptop" src="images/laptop.jpg" />
-												<img class="back-face" />
-											
-											</div>
-											<div class="memory-card" data-framework="LAP">
-												<img class="front-face" alt="laptop" src="images/laptop.jpg" />
-												<img class="back-face" />
-											
-											</div>
-											
-											<div class="memory-card" data-framework="WORK">
-												<img class="front-face" alt="work" src="images/work.jpg" />
-												<img class="back-face" />
-											
-											</div>
-											<div class="memory-card" data-framework="WORK">
-												<img class="front-face" alt="work" src="images/work.jpg" />
-												<img class="back-face" />
-											
-											</div>
-											
-											<div class="memory-card" data-framework="DROID">
-												<img class="front-face" alt="droid" src="images/droid.jpg" />
-												<img class="back-face" />
-											
-											</div>
-											<div class="memory-card" data-framework="DROID">
-												<img class="front-face" alt="droid" src="images/droid.jpg" />
-												<img class="back-face" />
-											</div>
-										
-											<div class="memory-card" data-framework="VET">
-												<img class="front-face" alt="vet" src="images/veteran.jpg" />
-												<img class="back-face" />
-											</div>
-											<div class="memory-card" data-framework="VET">
-												<img class="front-face" alt="vet" src="images/veteran.jpg" />
-												<img class="back-face" />
-											</div>
-										
-											<div class="memory-card" data-framework="ARMY">
-												<img class="front-face" alt="army" src="images/army.jpg" />
-												<img class="back-face" />
-											</div>
-											<div class="memory-card" data-framework="ARMY">
-												<img class="front-face" alt="army" src="images/army.jpg" />
-												<img class="back-face" />
-											</div>
-										
-											<div class="memory-card" data-framework="MOTTO">
-												<img class="front-face" alt="motto" src="images/motto.jpg" />
-												<img class="back-face" />
-											</div>
-											<div class="memory-card" data-framework="MOTTO">
-												<img class="front-face" alt="motto" src="images/motto.jpg" />
-												<img class="back-face" />
-											</div>
-										
-											<div class="memory-card" data-framework="FLOW">
-												<img class="front-face" alt="flow" src="images/flow.jpg" />
-												<img class="back-face" />
-											</div>
-											<div class="memory-card" data-framework="FLOW">
-												<img class="front-face" alt="flow" src="images/flow.jpg" />
-												<img class="back-face" />
-											</div>
-										
-											<div class="memory-card" data-framework="PRO">
-												<img class="front-face" alt="product" src="images/product.jpg" />
-												<img class="back-face" />
-											</div>
-											<div class="memory-card" data-framework="PRO">
-												<img class="front-face" alt="product" src="images/product.jpg" />
-												<img class="back-face" />
-											</div>
-											
-											</section>
-
-								<p><strong>Frameworks:</strong> NodeJS, Angular 2, Mustache, EJS, Java (JEE).</p>
-								<p><strong>ENVIRONMENTS & TOOLS:</strong> EJS, Mustache, JS, SASS, CSS3, AJAX, asset migration and integration. Unix. Git. GitHub. Node.js. ESLint. MongoDB. Heroku. Continuous integration. ES6. React. Redux. Webpack. SCSS. JSDoc. Swagger. Jest. Redux. React-Native. Socket.IO. Express JS. Cloud integration and deployments with AWS tools like S3, Lambda</p>
-
-								<p>I will update this section upon completion of my Code Fellows training.</p>
-
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">Documents</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<h6>All certificates and awards here for you to browse</h6>
-								
-								
-								<div class="multi-button">
-									<button><a href="docs/Resume2.pdf" download>Resume</a></button>
-									<button><a href="docs/Bachelor Diploma.pdf" download>Bachelors</a></button>
-									<button><a href="docs/W3Schools JS Cert.pdf" download>JS Cert</a></button>
-								</div>
-
-								<div class="multi-button">
-									<button><a href="docs/CSSCert.pdf" download>CSS Cert</a></button>
-									<button><a href="docs/W3SchoolsHTML.pdf" download>HTML Cert</a></button>
-								</div><br>
-								<h6>Credits:</h6>
-								<p><strong>Thanks to:</strong> 
-									<ul>
-										<li>Plane icon from <a href='https://pngtree.com/so/grey-bomber'>pngtree.com</a></li>
-										<li><a href="https://www.heropatterns.com/">Hero patterns</a> for the back of the card game images</li>
-										<li><a href="https://twitter.com/marco_bf">Marco Barria</a> for the transition animation</li>
-										<li><a href="https://unsplash.com/">Unsplash</a> for memory game images</li>
-										<li><a href="aj@lkn.io">Aj</a> for the web template</li>
-
-								</ul>
-								</p>
-
-
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<h6>The best way to get a hold of me is via phone at <span itemprop="telephone">
-									<a href="tel:+14158197231">
-										 415-819-7231
-									</a>
-								</span></h6>
-								<form action='mailto:thatvetdevrob@gmail.com'>
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" required/>
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" required/>
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4" required></textarea>
+							<!-- Section -->
+								<section>
+									<header>
+										<h3>Erat aliquam</h3>
+										<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
+									</header>
+									<div class="content">
+										<div class="gallery">
+											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
 										</div>
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header>
+										<h3>Nisl consequat</h3>
+										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam sed facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet mauris. Ut magna finibus nisi nec lacinia ipsum maximus.</p>
+									</header>
+									<div class="content">
+										<div class="gallery">
+											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header>
+										<h3>Lorem gravida</h3>
+										<p>Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aenean ornare velit lacus, ac varius sed enim lorem ullamcorper dolore.  ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis.</p>
+									</header>
+									<div class="content">
+										<div class="gallery">
+											<a href="images/gallery/fulls/08.jpg" class="portrait"><img src="images/gallery/thumbs/08.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/09.jpg" class="portrait"><img src="images/gallery/thumbs/09.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/10.jpg" class="landscape"><img src="images/gallery/thumbs/10.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Duis sed adpiscing veroeros amet</h2>
+						</header>
+						<div class="content">
+							<p><strong>Proin tempus feugiat</strong> sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
+							<ul class="actions">
+								<li><a href="#" class="button primary large">Get Started</a></li>
+								<li><a href="#" class="button large">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Elements -->
+				<!--
+					<section>
+						<header>
+							<h2>Elements</h2>
+						</header>
+						<div class="content">
+
+							<section>
+								<header>
+									<h3>Text</h3>
+								</header>
+								<div class="content">
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<hr />
+									<h5>Blockquote</h5>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h5>Preformatted</h5>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+  print 'Iteration ' + i;
+  deck.shuffle();
+  i++;
+}
+
+print 'Sorted in ' + i + ' iterations.';</code></pre>
+								</div>
+							</section>
+
+							<section>
+								<header>
+									<h3>Lists</h3>
+								</header>
+								<div class="content">
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
 									</ul>
-								</form>
 
-							</article>
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
 
-						
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
 
-					</div>
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</div>
+							</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p>Veteran-Made</p>
-					</footer>
+							<section>
+								<header>
+									<h3>Table</h3>
+								</header>
+								<div class="content">
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</section>
+
+							<section>
+								<header>
+									<h3>Buttons</h3>
+								</header>
+								<div class="content">
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button large">Large</a></li>
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</div>
+							</section>
+
+							<section>
+								<header>
+									<h3>Form</h3>
+								</header>
+								<div class="content">
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</div>
+							</section>
+
+						</div>
+					</section>
+				-->
+
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>Get in touch</h2>
+						</header>
+						<div class="content">
+							<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
+							<form>
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="button primary" /></li>
+								</ul>
+							</form>
+						</div>
+						<footer>
+							<ul class="items">
+								<li>
+									<h3>Email</h3>
+									<a href="#">information@untitled.ext</a>
+								</li>
+								<li>
+									<h3>Phone</h3>
+									<a href="#">(000) 000-0000</a>
+								</li>
+								<li>
+									<h3>Address</h3>
+									<span>1234 Somewhere Road, Nashville, TN 00000</span>
+								</li>
+								<li>
+									<h3>Elsewhere</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Copyright -->
+					<div class="copyright">&copy; Untitled. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
-
 		<!-- Scripts -->
-
-		
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/game.js"></script>
-
-			<script>
-				function myFunction() {
-					document.getElementById("hoja").style.display = "block";
-					setTimeout(function(){ 
-
-						document.getElementById("hoja").style.display = "none";
-
-					 }, 1000);
-				}
-				</script>
-
 
 	</body>
 </html>
