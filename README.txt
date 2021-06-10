@@ -13,7 +13,9 @@ Hi, right now I am updating my portfolio to show potential employers my skills *
 My speed is incredible, but not only can I manage the creation of email campaigns and see them thru end to end, I do so accurately and I follow the guidelines in every email campaign assigned to me using Jira atm. If you ever need someone that: just “puts their head down and cooks” away all of your backlogged campaigns, can create the responsiveness needed using amp-script to connect the email content to the Data Extension fields, and loves attention to detail with ample follow up thru the whole process consider sending me a message.
 
 
-#### Anything else?
+#### Update History
+
+June 9th: Added more copy and laying out some of the structure fo the portfolio. Will be looking at next adding the examples of my own work to the right places. 
 
 Its June the 7th as I write this and look forward to add more as I manage my job and free time... outside of work, I am a veteran who grew up in a rural farming environment and now works in email marketing: life is full of fun twists and turns.  
 
